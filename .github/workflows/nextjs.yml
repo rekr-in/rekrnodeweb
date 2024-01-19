@@ -75,6 +75,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: debug echo
+        run: ls -al
       - name: Archive the out folder
         run: tar -cvf out.tar out
       - name: Upload artifact
